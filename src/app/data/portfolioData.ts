@@ -11,16 +11,16 @@ export const personalInfo = {
     "Tech blogging"
   ],
   contact: {
-    email: "masum.billah@example.com",
-    phone: "+880 1700 000000",
-    whatsapp: "+8801700000000",
-    location: "Dhaka, Bangladesh"
+    email: "masum30.b@gmail.com",
+    phone: "+880 18 56756904",
+    whatsapp: "+880 18 56756904",
+    location: "Jashore, Khulna, Bangladesh"
   },
   socials: {
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
-    twitter: "https://twitter.com",
-    facebook: "https://facebook.com"
+    github: "https://github.com/masumb30",
+    linkedin: "https://www.linkedin.com/in/masumbm/",
+    
+    facebook: "https://web.facebook.com/masum.mim.685364/"
   },
   resumeUrl: "/resume.pdf" // Place your resume.pdf inside public folder
 };
@@ -48,9 +48,9 @@ export const skillsData: SkillCategory[] = [
     category: "DevOps & Tools",
     skills: [
       { name: "Git / GitHub", level: 90 },
-      { name: "Docker", level: 72 },
-      { name: "Vercel / AWS Basics", level: 80 },
-      { name: "Linux / Terminal", level: 85 }
+      {name: 'Postman', level: 80},
+      { name: "Vercel / Deployment", level: 80 },
+      {name:'Antigravity IDE', level: 80},
     ]
   }
 ];

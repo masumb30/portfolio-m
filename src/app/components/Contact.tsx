@@ -12,7 +12,7 @@ export default function Contact() {
         <div className="mt-12 grid gap-8 md:grid-cols-3">
           <div className="rounded-xl border border-slate-800 bg-slate-900 p-6 text-center">
             <span className="text-xs font-mono text-slate-500 uppercase">Email</span>
-            <p className="mt-2 text-base font-semibold text-slate-200">{personalInfo.contact.email}</p>
+            <a href="mailto:masum30.b@gmail.com" className="mt-2 text-base block  font-semibold text-cyan-300">{personalInfo.contact.email}</a>
           </div>
 
           <div className="rounded-xl border border-slate-800 bg-slate-900 p-6 text-center">
