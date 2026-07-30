@@ -27,24 +27,52 @@ export default function Hero() {
                     </p>
 
                     {/* Action Buttons */}
-                    <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-                        <a
-                            href={personalInfo.resumeUrl}
-                            download="Masum_Billah_Resume.pdf"
-                            className="inline-flex items-center gap-2 rounded-lg bg-cyan-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-600/20 transition-all duration-200 hover:bg-cyan-500 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-950"
-                        >
-                            <svg className="h-5 w-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                            </svg>
-                            Download Resume
-                        </a>
+                    <div className="mt-8 flex flex-col items-center justify-center gap-4 lg:justify-start">
+                        <div className="flex gap-2">
 
-                        <a
+                            <a
+                                href={personalInfo.resumeUrl}
+                                download="Masum_Billah_Resume.pdf"
+                                className="inline-flex items-center gap-2 rounded-lg bg-cyan-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-600/20 transition-all duration-200 hover:bg-cyan-500 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-950"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    className="w-5 h-5 text-white"
+                                >
+                                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                View Resume
+                            </a>
+                            <a
+                                href={`https://drive.google.com/uc?export=download&id=${personalInfo.resumeId}`}
+                                download="Masum_Billah_Resume.pdf"
+                                className="inline-flex items-center gap-2 rounded-lg bg-cyan-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-600/20 transition-all duration-200 hover:bg-cyan-500 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-950"
+                            >
+                                <svg className="h-5 w-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                                Download Resume
+                            </a>
+
+                        </div>
+
+                        <div>
+
+                            {/* <a
                             href="#contact"
                             className="rounded-lg border border-slate-700 bg-slate-900 px-6 py-3 text-sm font-semibold text-slate-200 transition-all duration-200 hover:border-slate-600 hover:bg-slate-800/80 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
                         >
                             Contact Me
-                        </a>
+                        </a> */}
+
+                        </div>
                     </div>
 
                     {/* Social Links */}

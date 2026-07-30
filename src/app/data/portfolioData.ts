@@ -22,7 +22,8 @@ export const personalInfo = {
     
     facebook: "https://web.facebook.com/masum.mim.685364/"
   },
-  resumeUrl: "/resume.pdf" // Place your resume.pdf inside public folder
+  resumeUrl: "https://drive.google.com/file/d/1NZf5_Ar8BlI0mVqwPy-EJJrswewIY7JP/view?usp=sharing" ,// Place your resume.pdf inside public folder
+  resumeId: "1NZf5_Ar8BlI0mVqwPy-EJJrswewIY7JP"
 };
 
 export const skillsData: SkillCategory[] = [
