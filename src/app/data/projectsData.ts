@@ -20,7 +20,7 @@ export const projectsData: Project[] = [
     "React Toastify"
   ],
   fullDescription: "Vines & Views empowers gardeners, organic horticulturists, and plant enthusiasts to document cultivation journeys, discover eco-friendly growing techniques, generate AI-powered articles, summarize complex guides, and analyze engagement metrics via a personalized dashboard. It features an organic community feed with real-time searching and filtering, an AI article summarizer via Google Gemini, an AI post generator, and an executive profile activity overview.",
-  liveLink: "https://vines-and-views.onrender.com/",
+  liveLink: "https://vines-and-views.vercel.app/",
   githubLink: "https://github.com/masumb30/vines-and-views.git",
   challenges: [
     "Implementing real-time filtering, instant search, and client/server paginated grid performance without sacrificing browsing capacity.",

@@ -40,7 +40,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         <h3 className="text-2xl font-extrabold text-slate-100">{project.title}</h3>
 
         <div className="relative mt-4 h-60 w-full overflow-hidden rounded-lg bg-slate-950">
-          <Image src={project.image} alt={project.title} fill className="object-cover" />
+          <Image src={project.image} alt={project.title} fill sizes="(max-width: 768px) 100vw, 800px" className="object-cover" />
         </div>
 
         <div className="mt-6 space-y-6 text-sm text-slate-300">

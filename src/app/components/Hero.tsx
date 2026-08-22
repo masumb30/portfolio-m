@@ -111,7 +111,7 @@ export default function Hero() {
 
                     </div>
 
-                    <Image style={{ filter: 'grayscale(100%)' }} src="/profile.jpg" alt="Masum Billah" width={350} height={220} className="rounded-full" />
+                    <Image style={{ filter: 'grayscale(100%)' }} src="/profile.jpg" alt="Masum Billah" width={350} height={220} priority className="rounded-full" />
 
 
 
