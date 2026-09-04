@@ -1,30 +1,22 @@
 import Image from "next/image";
 import { personalInfo } from "../data/portfolioData";
-import StaggeredText from "./StaggeredText";
-import WordReveal from "./WordReveat";
-import StrokeText from "./StrokeText";
-import ResumeButtons from "./ResumeButtons";
-import SocialIcons from "./SocialIcons";
 
 export default function Hero() {
     return (
-        <section className="relative overflow-hidden min-h-screen">
-            <StaggeredText />
-            <div className="mx-auto flex max-w-6xl flex-col-reverse items-center justify-center gap-12 px-6 md:flex-row">
+        <section className="relative overflow-hidden py-10 md:py-20">
+            <div className="mx-auto flex max-w-6xl flex-col-reverse items-center justify-between gap-12 px-6 md:flex-row">
                 {/* Left Content */}
-                <div className="flex flex-1 flex-col items-center text-center ">
-                    {/* <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-1 text-xs font-mono text-cyan-300">
+                <div className="flex flex-1 flex-col items-center text-center lg:items-start lg:text-left">
+                    <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-1 text-xs font-mono text-cyan-300">
                         <span className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse">
 
                         </span>
                         Available for opportunities
-                    </div> */}
+                    </div>
 
-                    {/* <h1 className="hidden md:block mt-6 text-4xl font-extrabold tracking-tight text-slate-100 sm:text-5xl lg:text-6xl">
+                    <h1 className="hidden md:block mt-6 text-4xl font-extrabold tracking-tight text-slate-100 sm:text-5xl lg:text-6xl">
                         Hi, I&apos;m <span className="text-cyan-400">{personalInfo.name}</span>
-                    </h1> */}
-
-                    <StrokeText delay={0.4}/>
+                    </h1>
 
                     
 
@@ -35,14 +27,12 @@ export default function Hero() {
 
                     
 
-                    {/* <p className="hidden md:block mt-4 max-w-xl text-base text-slate-400 sm:text-lg">
+                    <p className="hidden md:block mt-4 max-w-xl text-base text-slate-400 sm:text-lg">
                         {personalInfo.tagline}
-                    </p> */}
-                    <WordReveal text={personalInfo.tagline} delay={0.9}/>
+                    </p>
 
                     {/* Action Buttons */}
-                    
-                    {/* <div className="mt-8 flex flex-col items-center justify-center gap-4 lg:justify-start">
+                    <div className="mt-8 flex flex-col items-center justify-center gap-4 lg:justify-start">
                         <div className="flex gap-2">
 
                             <a
@@ -80,15 +70,18 @@ export default function Hero() {
 
                         <div>
 
+                            {/* <a
+                            href="#contact"
+                            className="rounded-lg border border-slate-700 bg-slate-900 px-6 py-3 text-sm font-semibold text-slate-200 transition-all duration-200 hover:border-slate-600 hover:bg-slate-800/80 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                        >
+                            Contact Me
+                        </a> */}
+
                         </div>
-                    </div> */}
-
-                    <ResumeButtons resumeUrl={personalInfo.resumeUrl} resumeId={personalInfo.resumeId} delay={1.3} />
-
-
+                    </div>
 
                     {/* Social Links */}
-                    {/* <div className="mt-5 flex items-center gap-5">
+                    <div className="mt-5 flex items-center gap-5">
                         <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">Connect:</span>
                         {Object.entries(personalInfo.socials).map(([key, value]) => (
                             <a
@@ -101,14 +94,33 @@ export default function Hero() {
                                 {key}
                             </a>
                         ))}
-                    </div> */}
+                    </div>
+                </div>
 
-                    <SocialIcons delay={1.5} />
+                {/* Right Photo Placeholder */}
+                <div className="relative flex flex-col justify-center items-center">
+
+                    <div className="flex md:hidden flex-col items-center justify-center">
+
+                        <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-slate-100 sm:text-5xl lg:text-6xl">
+                            Hi, I&apos;m <span className="text-cyan-400">{personalInfo.name}</span>
+                        </h1>
+
+                        <p className="mt-2 font-mono text-lg font-medium text-cyan-300 sm:text-xl text-center">
+                            {personalInfo.title}
+                        </p>
+
+                        <p className="mt-4 max-w-xl text-base text-slate-400 sm:text-lg">
+                            {personalInfo.tagline}
+                        </p>
+
+                    </div>
+
+                    <Image style={{ filter: 'grayscale(100%)' }} src="/profile.jpg" alt="Masum Billah" width={350} height={220} priority className="rounded-full" />
+
 
 
                 </div>
-
-                
             </div>
         </section>
     );
