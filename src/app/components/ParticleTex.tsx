@@ -40,7 +40,7 @@ export default function ParticleText({
   const [particles, setParticles] = useState<Particle[]>([]);
   const [isAssembled, setIsAssembled] = useState(false);
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number } | null>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number>(null);
   const isInViewRef = useRef(false);
   const hasAssembledRef = useRef(false);
 
