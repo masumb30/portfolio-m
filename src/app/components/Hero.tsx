@@ -5,10 +5,12 @@ import WordReveal from "./WordReveat";
 import StrokeText from "./StrokeText";
 import ResumeButtons from "./ResumeButtons";
 import SocialIcons from "./SocialIcons";
+import HeroShape from "./HeroShape";
 
 export default function Hero() {
     return (
-        <section className="relative overflow-hidden min-h-screen">
+        <section className="relative overflow-hidden min-h-[calc(100vh-64px)]">
+            <HeroShape />
             <StaggeredText />
             <div className="mx-auto flex max-w-6xl flex-col-reverse items-center justify-center gap-12 px-6 md:flex-row">
                 {/* Left Content */}

@@ -5,7 +5,7 @@ export const personalInfo = {
   name: "Masum Billah",
   title: "Full Stack Developer",
   tagline: "Building resilient, scalable web applications with high-craft interfaces.",
-  bio: "I am a passionate Full Stack Developer with a strong focus on modern JavaScript frameworks, performant backend architectures, and clean UI engineering. My journey started with curiosity about how the web works, which quickly evolved into an obsessive craft for building production-ready applications.",
+  bio: "I am a passionate Full Stack Developer with a strong focus on modern JavaScript frameworks, performant backend architectures, and clean UI engineering. My journey started with curiosity about how the web works, which quickly evolved into an obsessive craft for building production-ready applications. I thrive on converting complex product requirements into clean, manageable codebases. My development philosophy focuses on developer experience, strong typing, and performance accessibility.",
   hobbies: [
     "Digital art and painting",
     "Tech blogging"

@@ -51,7 +51,7 @@ const StaggeredText = () => {
 
     return (
         <motion.div
-            className="flex flex-col items-center justify-center my-5 space-y-4"
+            className="flex flex-col items-center justify-center my-5 mt-20 space-y-4"
             initial="hidden"
             animate="visible"
             variants={containerVariants}
