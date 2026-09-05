@@ -1,6 +1,6 @@
 'use client'
 import React, { useRef, useState } from "react";
-import { motion, useInView } from "motion/react";
+import { AnimatePresence, motion, useInView } from "motion/react";
 import {
     SiReact,
     SiNextdotjs,
@@ -57,7 +57,7 @@ const categories = ["All Tech", "Frontend", "Backend/DB", "Tools"];
 
 export function SkillsSection() {
     const cardWrapperRef = useRef(null);
-    const isCardWrapperInView = useInView(cardWrapperRef, { once: false, amount: 0.4 });
+    const isCardWrapperInView = useInView(cardWrapperRef, { once: false, amount: 0.3 });
     const [activeTab, setActiveTab] = useState("All Tech");
 
     const filteredSkills =
@@ -100,13 +100,16 @@ export function SkillsSection() {
                 </div>
 
                 {/* Icon Grid */}
-                <div ref={cardWrapperRef} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    
+                <div  ref={cardWrapperRef} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <AnimatePresence mode="wait">
                     {filteredSkills.map((skill) => {
                         const Icon = skill.icon;
                         return (
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.3 }}
                                 animate={isCardWrapperInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.3 }}
+                                exit={{ opacity: 0, scale: 0.3 }}
                                 transition={{ duration: 0.5, bounce: 1 }}
                                 key={skill.name}
                                 className="flex flex-col items-center justify-center p-5 rounded-xl hover:shadow-cyan-500/30 hover:shadow-lg border border-slate-800  cursor-pointer hover:border-transparent transition-shadow duration-300 group "
@@ -123,7 +126,9 @@ export function SkillsSection() {
                             </motion.div>
                         );
                     })}
+                </AnimatePresence>
                 </div>
+
             </div>
         </motion.section>
     );

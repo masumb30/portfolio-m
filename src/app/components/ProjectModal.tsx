@@ -9,14 +9,18 @@ interface ProjectModalProps {
   onClose: () => void;
 }
 
+
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
+    
     if (project) {
       document.body.style.overflow = "hidden";
       window.addEventListener("keydown", handleKeyDown);
+      // document.body.style.overflow = "hidden";
+      // window.addEventListener("keydown", handleKeyDown);
     }
     return () => {
       document.body.style.overflow = "auto";
@@ -27,11 +31,13 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   if (!project) return null;
 
   return (
-    <div onClick={onClose} className=" fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 p-4 backdrop-blur-sm">
+    <div onClick={onClose} data-lenis-prevent
+          data-lenis-stop className=" fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 p-4 backdrop-blur-sm">
       <div onClick={(e) => e.stopPropagation()} className="custom-scrollbar relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-xl border border-slate-800 bg-slate-900 p-6 sm:p-8 shadow-2xl">
         {/* Close Button */}
         <button
           onClick={onClose}
+          
           className="absolute right-4 top-4 rounded-lg p-2 text-slate-400 hover:bg-slate-800 hover:text-slate-100"
         >
           ✕
