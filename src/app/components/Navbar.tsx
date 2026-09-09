@@ -1,21 +1,43 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const navLinks = [
+  { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
-  { name: "Qualifications", href: "#education" },
-//   { name: "Experience", href: "#experience" },
+  //   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
+  { name: "Qualifications", href: "#education" },
   { name: "Contact", href: "#contact" }
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(`#${entry.target.id}`);
+          }
+        });
+      },
+      { rootMargin: "-30% 0px -50% 0px" } // Detects section near middle of viewport
+    );
+
+    navLinks.forEach((link) => {
+      const el = document.querySelector(link.href);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-slate-800/80 bg-slate-950/60 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
         {/* Stylish M Logo */}
         <a href="#" className="group flex items-center gap-2">
@@ -29,21 +51,28 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden items-center gap-2 md:flex">
-          {navLinks.map((link) => (
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.href;
+            return (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-slate-400 transition-colors duration-200 hover:text-slate-100 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded py-3 px-4 hover:bg-cyan-700/10"
+              className={`relative flex items-center justify-center text-sm font-medium transition-colors duration-300 focus:ring-cyan-500 rounded py-2 px-4 ${
+                  isActive
+                    ? "text-cyan-400 bg-cyan-500/10"
+                    : "text-slate-400 hover:text-slate-100 hover:bg-cyan-700/10"
+                }`}
             >
+              <span className={`absolute bottom-0  h-[2px]  bg-cyan-500 ${isActive ? "w-[100%]" : "w-[0%]"} transition-all transition-duration-300`}></span>
               {link.name}
             </a>
-          ))}
-          <a
+          )})}
+          {/* <a
             href="#projects"
             className="rounded-lg bg-cyan-600 px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-950"
           >
             View Projects
-          </a>
+          </a> */}
         </nav>
 
         {/* Mobile Toggle */}
@@ -66,16 +95,23 @@ export default function Navbar() {
       {isOpen && (
         <div className="border-b border-slate-800 bg-slate-950 px-6 pb-6 pt-2 md:hidden">
           <div className="flex flex-col space-y-4">
-            {navLinks.map((link) => (
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.href;
+              return (
               <a
                 key={link.name}
                 href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="text-base font-medium text-slate-300 hover:text-cyan-400 transition-colors duration-200"
+                onClick={() => {
+                    setActiveSection(link.href);
+                    setIsOpen(false);
+                  }}
+                className={`text-base font-medium transition-colors duration-200 ${
+                    isActive ? "text-cyan-400 font-semibold" : "text-slate-300 hover:text-cyan-400"
+                  }`}
               >
                 {link.name}
               </a>
-            ))}
+            )})}
             <a
               href="#projects"
               onClick={() => setIsOpen(false)}
