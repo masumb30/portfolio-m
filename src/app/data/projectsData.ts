@@ -48,7 +48,7 @@ export const projectsData: Project[] = [
     "Stripe"
   ],
   fullDescription: "BiteCraft enables independent chefs to monetize their talents, manage custom menus, and handle orders, while allowing users to explore local meal-prep options, filter by dietary requirements, and order fresh, ready-to-eat gastronomy. It features dynamic marketplace exploration with portion calculation calculators, role-based dashboards for chefs and customers, automated mock data seeding tools, and a secure server-side proxy for role protection.",
-  liveLink: "https://bitecraft-wleh.onrender.com/",
+  liveLink: "https://bitecraft-rosy.vercel.app/",
   githubLink: "https://github.com/masumb30/bitecraft",
   challenges: [
     "Ensuring strict role-based authorization and session security across server-side route guards and protected dashboard paths using Better Auth and custom middleware proxy logic.",
