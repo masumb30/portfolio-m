@@ -78,7 +78,7 @@ export const projectsData: Project[] = [
     "Lucide React"
   ],
   fullDescription: "RentEase provides an end-to-end rental experience featuring a dynamic landing page, backend-driven search and filtering, and secure Stripe payment processing. It includes role-based dashboards for tenants (booking tracking, favorites, reviews), owners (revenue line charts via Recharts, listing creation, booking approvals), and admins (user moderation, property moderation with feedback notes, transaction auditing).",
-  liveLink: "https://rental-frontend-26fc.onrender.com/",
+  liveLink: "https://rental-frontend-nine.vercel.app/",
   githubLink: "https://github.com/masumb30/rental-frontend",
   challenges: [
     "Implementing role-based access control (RBAC) across three distinct user workflows (Tenant, Owner, Admin) with granular route and modal permissions.",
